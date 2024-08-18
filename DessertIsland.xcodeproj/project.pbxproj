@@ -14,6 +14,11 @@
 		043B40672C6A7D2800BBCFCE /* DessertIslandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B40662C6A7D2800BBCFCE /* DessertIslandTests.swift */; };
 		043B40712C6A7D2900BBCFCE /* DessertIslandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B40702C6A7D2900BBCFCE /* DessertIslandUITests.swift */; };
 		043B40732C6A7D2900BBCFCE /* DessertIslandUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B40722C6A7D2900BBCFCE /* DessertIslandUITestsLaunchTests.swift */; };
+		043B40802C6A7D9800BBCFCE /* NetworkCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043B407F2C6A7D9800BBCFCE /* NetworkCalls.swift */; };
+		0493197A2C718546003DFD72 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049319792C718546003DFD72 /* NetworkRequest.swift */; };
+		0493197C2C718573003DFD72 /* NetworkObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493197B2C718573003DFD72 /* NetworkObjects.swift */; };
+		0493197E2C718640003DFD72 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493197D2C718640003DFD72 /* RowView.swift */; };
+		049319802C718668003DFD72 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493197F2C718668003DFD72 /* MealDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		043B406C2C6A7D2900BBCFCE /* DessertIslandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DessertIslandUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		043B40702C6A7D2900BBCFCE /* DessertIslandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertIslandUITests.swift; sourceTree = "<group>"; };
 		043B40722C6A7D2900BBCFCE /* DessertIslandUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertIslandUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		043B407F2C6A7D9800BBCFCE /* NetworkCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCalls.swift; sourceTree = "<group>"; };
+		049319792C718546003DFD72 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		0493197B2C718573003DFD72 /* NetworkObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObjects.swift; sourceTree = "<group>"; };
+		0493197D2C718640003DFD72 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		0493197F2C718668003DFD72 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +106,13 @@
 			children = (
 				043B40552C6A7D2700BBCFCE /* DessertIslandApp.swift */,
 				043B40572C6A7D2700BBCFCE /* ContentView.swift */,
+				0493197D2C718640003DFD72 /* RowView.swift */,
+				0493197F2C718668003DFD72 /* MealDetailView.swift */,
 				043B40592C6A7D2800BBCFCE /* Assets.xcassets */,
 				043B405B2C6A7D2800BBCFCE /* Preview Content */,
+				043B407F2C6A7D9800BBCFCE /* NetworkCalls.swift */,
+				049319792C718546003DFD72 /* NetworkRequest.swift */,
+				0493197B2C718573003DFD72 /* NetworkObjects.swift */,
 			);
 			path = DessertIsland;
 			sourceTree = "<group>";
@@ -258,7 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				043B40582C6A7D2700BBCFCE /* ContentView.swift in Sources */,
+				0493197E2C718640003DFD72 /* RowView.swift in Sources */,
+				0493197C2C718573003DFD72 /* NetworkObjects.swift in Sources */,
 				043B40562C6A7D2700BBCFCE /* DessertIslandApp.swift in Sources */,
+				049319802C718668003DFD72 /* MealDetailView.swift in Sources */,
+				0493197A2C718546003DFD72 /* NetworkRequest.swift in Sources */,
+				043B40802C6A7D9800BBCFCE /* NetworkCalls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +445,8 @@
 				DEVELOPMENT_TEAM = 9RH4L8S898;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dessert Island";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +476,8 @@
 				DEVELOPMENT_TEAM = 9RH4L8S898;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dessert Island";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -7,18 +7,27 @@
 
 import SwiftUI
 
+/*
+ The user should be shown the list of meals in the Dessert category, sorted alphabetically.
+ */
 struct ContentView: View {
+    @EnvironmentObject var network: NetworkCall
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                ForEach(network.meals.meals) { meal in
+                    RowView(meal: meal)
+                }
+            }.onAppear {
+                network.getMeals()
+            }
+            .navigationTitle("Dessert Island")
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(NetworkCall())
 }
+
