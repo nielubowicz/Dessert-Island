@@ -7,61 +7,37 @@
 
 import SwiftUI
 
+// TODO: Errors could and should be expanded.
+enum NetworkError: Error {
+    case noResponse
+    case status(code: Int)
+    case badURL
+}
+
+
 class NetworkCall: ObservableObject {
-    @Published var meals = MealList(meals: [Meal]())
-    @Published var mealDetails = MealLookup(meals: [MealInstructions]())
-    
-    func getMeals() {
-        guard let url = URL(for: .list(category: "Dessert")) else { fatalError() }
+    func getMealsOfType(_ category: String) async throws -> MealList {
+        guard let url = URL(for: .list(category: category)) else { throw NetworkError.badURL }
         let URLRequest = URLRequest(url: url)
         
-        let dataTask = URLSession.shared.dataTask(with: URLRequest) { (data, response, error) in
-            if let error = error {
-                print("Error: \(error)")
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse else { return }
-            if response.statusCode == 200 {
-                guard let data = data else { fatalError("No data in response: \(response)") }
-                DispatchQueue.main.async {
-                    do {
-                        guard let decodedMeals = try? JSONDecoder().decode(MealList.self, from: data) else { fatalError("Failed to get meals") }
-                        self.meals = decodedMeals
-                    }
-                }
-            } else {
-                // TODO: Handle failed request
-            }
-        }
+        let (data, response) = try await URLSession.shared.data(for: URLRequest)
         
-        dataTask.resume()
+        guard let response = response as? HTTPURLResponse else { throw NetworkError.noResponse }
+        
+        // TODO: genericize this call to handle more types of status codes
+        guard response.statusCode == 200 else { throw NetworkError.status(code: response.statusCode) }
+        return try JSONDecoder().decode(MealList.self, from: data)
     }
     
-    func getMealDetails(for mealID: String) {
-        guard let url = URL(for: .detail(mealID: mealID)) else { fatalError() }
+    func getMealDetails(for mealID: String) async throws -> MealLookup {
+        guard let url = URL(for: .detail(mealID: mealID)) else { throw NetworkError.badURL }
         let URLRequest = URLRequest(url: url)
         
-        let dataTask = URLSession.shared.dataTask(with: URLRequest) { (data, response, error) in
-            if let error = error {
-                print("Error: \(error)")
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse else { return }
-            if response.statusCode == 200 {
-                guard let data = data else { fatalError("No data in response: \(response)") }
-                DispatchQueue.main.async {
-                    do {
-                        guard let decodedInstructions = try? JSONDecoder().decode(MealLookup.self, from: data) else { fatalError("Failed to get meal details") }
-                        self.mealDetails = decodedInstructions
-                    }
-                }
-            } else {
-                // TODO: Handle failed request
-            }
-        }
+        let (data, response) = try await URLSession.shared.data(for: URLRequest)
+        guard let response = response as? HTTPURLResponse else { throw NetworkError.noResponse }
         
-        dataTask.resume()
+        // TODO: genericize this call to handle more types of status codes
+        guard response.statusCode == 200 else { throw NetworkError.status(code: response.statusCode) }
+        return try JSONDecoder().decode(MealLookup.self, from: data)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-/* filter.php
+/* Example response from filter.php
  {
    "meals": [
      {
@@ -43,7 +43,7 @@ struct Meal: Identifiable, Decodable {
 }
 
 
-/* lookup.php
+/* Example response from lookup.php
  {
    "meals": [
      {
