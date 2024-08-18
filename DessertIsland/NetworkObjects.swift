@@ -248,16 +248,30 @@ struct MealInstructionIngredientPrinter {
             (instructions.measure19, instructions.ingredient19),
             (instructions.measure20, instructions.ingredient20),
         ]
+        // Filter all measurement and ingredient pairs by isNotNil && isNotEmpty
             .filter({$0.0 != nil && !$0.0!.isEmpty && $0.1 != nil && !$0.1!.isEmpty})
-            .map({" \($0.0 ?? "") \($0.1 ?? "")"})
+        // Map into a single string with "measurement ingredient"
+            .map({"\($0.0 ?? "") \($0.1 ?? "")"})
     }
 }
 
 struct MealInstructionPrinter {
     let instructions: MealInstructions
     
+    /*
+     Input:
+     "strInstructions": "To make the pastry, measure the flour into a bowl and rub in the butter with your fingertips until the mixture resembles fine breadcrumbs. Add the water, mixing to form a soft dough.\r\nRoll out the dough on a lightly floured work surface and use to line a 20cm/8in flan tin. Leave in the fridge to chill for 30 minutes.\r\nPreheat..."
+     
+     Output:
+     1. To make the pastry, measure the flour into a bowl and rub in the butter with your fingertips until the mixture resembles fine breadcrumbs. Add the water, mixing to form a soft dough.
+     2. Roll out the dough on a lightly floured work surface and use to line a 20cm/8in flan tin. Leave in the fridge to chill for 30 minutes.
+     3. Preheat...
+     */
     func instructionList() -> [String] {
+        // Split the string into substrings on \r\n's, turn those back into Strings, then filter out the null ones
         let list = instructions.instructions.split(whereSeparator: { $0 == "\r\n"}).map({String($0)}).compactMap({$0})
+        
+        // Enumerate the list of instructions to get the instruction's index
         return list.enumerated().map({"     \($0+1). \($1)"})
     }
 }

@@ -29,7 +29,6 @@ class NetworkCall: ObservableObject {
         let URLRequest = URLRequest(url: url)
         
         let (data, response) = try await URLSession.shared.data(for: URLRequest)
-        
         guard let response = response as? HTTPURLResponse else { throw NetworkError.noResponse }
         
         // TODO: genericize this call to handle more types of status codes
