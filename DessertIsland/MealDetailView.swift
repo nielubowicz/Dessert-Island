@@ -17,12 +17,13 @@ import SwiftUI
 struct MealDetailView: View {
     @EnvironmentObject var network: NetworkCall
     @Binding var meal: Meal
+    @State var mealDetails: MealLookup = MealLookup(meals: [MealInstructions]() )
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 Spacer(minLength: 24)
-                if let meal = network.mealDetails.meals.first {
+                if let meal = mealDetails.meals.first {
                     let printer = MealInstructionIngredientPrinter(instructions: meal)
                     ForEach(Array(printer.ingredientsList().enumerated()), id: \.offset) { _, ingredient in
                         Text(ingredient)
@@ -37,8 +38,12 @@ struct MealDetailView: View {
                     }
                 }
                 
-            }.onAppear {
-                network.getMealDetails(for: meal.id)
+            }.task {
+                do {
+                    mealDetails = try await network.getMealDetails(for: meal.id)
+                } catch {
+                    // TODO: Handle errors here
+                }
             }
         }
         .padding(16)

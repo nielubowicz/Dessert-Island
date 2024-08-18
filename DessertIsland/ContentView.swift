@@ -12,16 +12,21 @@ import SwiftUI
  */
 struct ContentView: View {
     @EnvironmentObject var network: NetworkCall
+    @State var mealList: MealList = MealList(meals: [Meal]() )
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(network.meals.meals) { meal in
+                ForEach(mealList.meals) { meal in
                     RowView(meal: meal)
                 }
-            }.onAppear {
-                network.getMeals()
+            }.navigationTitle("Dessert Island")
+        }.task {
+            do {
+                mealList = try await network.getMealsOfType("Dessert")
+            } catch {
+                // TODO: Handle errors here
             }
-            .navigationTitle("Dessert Island")
         }
     }
 }
