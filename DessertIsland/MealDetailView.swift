@@ -19,19 +19,20 @@ struct MealDetailView: View {
     @State var mealDetails: MealLookup = MealLookup(meals: [MealInstructions]() )
     
     var body: some View {
+        
         ScrollView {
             VStack(alignment: .leading) {
                 Spacer(minLength: 24)
                 if let meal = mealDetails.meals.first {
-                    let printer = MealInstructionIngredientPrinter(instructions: meal)
-                    ForEach(Array(printer.ingredientsList().enumerated()), id: \.offset) { _, ingredient in
+                    let viewModel = MealInstructionIngredientViewModel(instructions: meal)
+                    ForEach(Array(viewModel.ingredientsList().enumerated()), id: \.offset) { _, ingredient in
                         Text(ingredient)
                     }
                     
                     Spacer(minLength: 24)
                     
-                    let instructionPrinter = MealInstructionPrinter(instructions: meal)
-                    ForEach(Array(instructionPrinter.instructionList().enumerated()), id: \.offset) { _, instruction in
+                    let instructionViewModel = MealInstructionViewModel(instructions: meal)
+                    ForEach(Array(instructionViewModel.instructionList().enumerated()), id: \.offset) { _, instruction in
                         Text(instruction)
                         Spacer(minLength: 8)
                     }

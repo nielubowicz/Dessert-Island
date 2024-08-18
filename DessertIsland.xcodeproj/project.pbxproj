@@ -19,6 +19,7 @@
 		0493197C2C718573003DFD72 /* NetworkObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493197B2C718573003DFD72 /* NetworkObjects.swift */; };
 		0493197E2C718640003DFD72 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493197D2C718640003DFD72 /* RowView.swift */; };
 		049319802C718668003DFD72 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493197F2C718668003DFD72 /* MealDetailView.swift */; };
+		049319822C722D94003DFD72 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049319812C722D94003DFD72 /* ViewModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		0493197B2C718573003DFD72 /* NetworkObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObjects.swift; sourceTree = "<group>"; };
 		0493197D2C718640003DFD72 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		0493197F2C718668003DFD72 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
+		049319812C722D94003DFD72 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				043B407F2C6A7D9800BBCFCE /* NetworkCalls.swift */,
 				049319792C718546003DFD72 /* NetworkRequest.swift */,
 				0493197B2C718573003DFD72 /* NetworkObjects.swift */,
+				049319812C722D94003DFD72 /* ViewModels.swift */,
 			);
 			path = DessertIsland;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			files = (
 				043B40582C6A7D2700BBCFCE /* ContentView.swift in Sources */,
 				0493197E2C718640003DFD72 /* RowView.swift in Sources */,
+				049319822C722D94003DFD72 /* ViewModels.swift in Sources */,
 				0493197C2C718573003DFD72 /* NetworkObjects.swift in Sources */,
 				043B40562C6A7D2700BBCFCE /* DessertIslandApp.swift in Sources */,
 				049319802C718668003DFD72 /* MealDetailView.swift in Sources */,
