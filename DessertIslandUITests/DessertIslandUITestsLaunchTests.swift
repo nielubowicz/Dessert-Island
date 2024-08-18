@@ -2,7 +2,7 @@
 //  DessertIslandUITestsLaunchTests.swift
 //  DessertIslandUITests
 //
-//  Created by mac on 8/12/24.
+//  Created by Chris Nielubowicz on 8/12/24.
 //
 
 import XCTest

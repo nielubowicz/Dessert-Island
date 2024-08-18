@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  DessertIsland
 //
-//  Created by mac on 8/12/24.
+//  Created by Chris Nielubowicz on 8/12/24.
 //
 
 import SwiftUI
@@ -11,7 +11,6 @@ import SwiftUI
  The user should be shown the list of meals in the Dessert category, sorted alphabetically.
  */
 struct ContentView: View {
-    @EnvironmentObject var network: NetworkCall
     @State var mealList: MealList = MealList(meals: [Meal]() )
     
     var body: some View {
@@ -23,7 +22,7 @@ struct ContentView: View {
             }.navigationTitle("Dessert Island")
         }.task {
             do {
-                mealList = try await network.getMealsOfType("Dessert")
+                mealList = try await NetworkCall.shared.getMealsOfType("Dessert")
             } catch {
                 // TODO: Handle errors here
             }
@@ -33,6 +32,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(NetworkCall())
 }
 

@@ -2,7 +2,7 @@
 //  NetworkObjects.swift
 //  DessertIsland
 //
-//  Created by mac on 8/17/24.
+//  Created by Chris Nielubowicz on 8/17/24.
 //
 
 import Foundation

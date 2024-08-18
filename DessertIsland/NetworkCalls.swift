@@ -2,7 +2,7 @@
 //  NetworkCalls.swift
 //  DessertIsland
 //
-//  Created by mac on 8/12/24.
+//  Created by Chris Nielubowicz on 8/12/24.
 //
 
 import SwiftUI
@@ -16,6 +16,14 @@ enum NetworkError: Error {
 
 
 class NetworkCall: ObservableObject {
+    private static var _shared = NetworkCall()
+    static var shared: NetworkCall {
+        get
+        {
+            return _shared
+        }
+    }
+    
     func getMealsOfType(_ category: String) async throws -> MealList {
         guard let url = URL(for: .list(category: category)) else { throw NetworkError.badURL }
         let URLRequest = URLRequest(url: url)

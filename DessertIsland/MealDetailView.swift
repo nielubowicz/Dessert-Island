@@ -2,7 +2,7 @@
 //  MealDetailView.swift
 //  DessertIsland
 //
-//  Created by mac on 8/17/24.
+//  Created by Chris Nielubowicz on 8/17/24.
 //
 
 import SwiftUI
@@ -15,7 +15,6 @@ import SwiftUI
  Ingredients/measurements
  */
 struct MealDetailView: View {
-    @EnvironmentObject var network: NetworkCall
     @Binding var meal: Meal
     @State var mealDetails: MealLookup = MealLookup(meals: [MealInstructions]() )
     
@@ -40,7 +39,7 @@ struct MealDetailView: View {
                 
             }.task {
                 do {
-                    mealDetails = try await network.getMealDetails(for: meal.id)
+                    mealDetails = try await NetworkCall.shared.getMealDetails(for: meal.id)
                 } catch {
                     // TODO: Handle errors here
                 }
@@ -56,7 +55,6 @@ struct MealDetailView: View {
         @State var meal = Meal(name: "Best Dessert", thumbnail: "http://notathumbnail", id: "1234")
         var body: some View {
             MealDetailView(meal: $meal)
-                .environmentObject(NetworkCall())
         }
     }
     

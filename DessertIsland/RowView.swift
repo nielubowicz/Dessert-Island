@@ -2,7 +2,7 @@
 //  RowView.swift
 //  DessertIsland
 //
-//  Created by mac on 8/17/24.
+//  Created by Chris Nielubowicz on 8/17/24.
 //
 
 import SwiftUI
@@ -12,11 +12,9 @@ import SwiftUI
  */
 
 struct RowView: View {
-    @EnvironmentObject var network: NetworkCall
     @State var meal: Meal
     var body: some View {
-        NavigationLink(
-            destination: MealDetailView(meal: $meal).environmentObject(network)) {
+        NavigationLink(destination: MealDetailView(meal: $meal)) {
             HStack {
                 AsyncImage(url: URL(string: meal.thumbnail))
                     .aspectRatio(contentMode: .fill)
@@ -39,5 +37,4 @@ struct RowView: View {
         thumbnail: "http://notathumbnail",
         id: "1234")
     )
-        .environmentObject(NetworkCall())
 }
