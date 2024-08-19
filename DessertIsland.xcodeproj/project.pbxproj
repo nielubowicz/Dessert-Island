@@ -20,6 +20,8 @@
 		0493197E2C718640003DFD72 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493197D2C718640003DFD72 /* RowView.swift */; };
 		049319802C718668003DFD72 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0493197F2C718668003DFD72 /* MealDetailView.swift */; };
 		049319822C722D94003DFD72 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049319812C722D94003DFD72 /* ViewModels.swift */; };
+		049319852C73B42D003DFD72 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049319842C73B42D003DFD72 /* Launch Screen.storyboard */; };
+		049319872C73B71C003DFD72 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 049319862C73B71C003DFD72 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		0493197D2C718640003DFD72 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		0493197F2C718668003DFD72 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 		049319812C722D94003DFD72 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
+		049319842C73B42D003DFD72 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		049319862C73B71C003DFD72 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		043B40492C6A7D2700BBCFCE = {
 			isa = PBXGroup;
 			children = (
+				049319842C73B42D003DFD72 /* Launch Screen.storyboard */,
 				043B40542C6A7D2700BBCFCE /* DessertIsland */,
 				043B40652C6A7D2800BBCFCE /* DessertIslandTests */,
 				043B406F2C6A7D2900BBCFCE /* DessertIslandUITests */,
@@ -106,6 +111,7 @@
 		043B40542C6A7D2700BBCFCE /* DessertIsland */ = {
 			isa = PBXGroup;
 			children = (
+				049319862C73B71C003DFD72 /* Info.plist */,
 				043B40552C6A7D2700BBCFCE /* DessertIslandApp.swift */,
 				043B40572C6A7D2700BBCFCE /* ContentView.swift */,
 				0493197D2C718640003DFD72 /* RowView.swift */,
@@ -249,6 +255,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049319872C73B71C003DFD72 /* Info.plist in Resources */,
+				049319852C73B42D003DFD72 /* Launch Screen.storyboard in Resources */,
 				043B405D2C6A7D2800BBCFCE /* Preview Assets.xcassets in Resources */,
 				043B405A2C6A7D2800BBCFCE /* Assets.xcassets in Resources */,
 			);
@@ -449,6 +457,7 @@
 				DEVELOPMENT_TEAM = 9RH4L8S898;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DessertIsland/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Dessert Island";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -480,6 +489,7 @@
 				DEVELOPMENT_TEAM = 9RH4L8S898;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DessertIsland/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Dessert Island";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

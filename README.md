@@ -12,3 +12,4 @@ TODOs:
 + Error handling, especially for network requests. Currently, the app must be restarted if the original request fails. Likely, a *Retry* button or another option should be added to prevent the user from getting stuck.
 + Add view polish. There are some stateful animations that happen now, but the un-happy-path flow is not very polished.
 + Meal Detail view population: For some reason I don't understand yet, the Meal Detail page shows old meal details before loading in the new one. Likely this has something to do with the bindings but I just haven't figured it out yet. 
++ Add Localization support (check if mealdb supports other languages, and include translations for any hardcoded strings)
