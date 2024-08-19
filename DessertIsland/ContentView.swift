@@ -33,7 +33,7 @@ struct ContentView: View {
                     ProgressView()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background {
-                            Color.secondary.opacity(0.6)
+                            Color.secondary.opacity(0.2)
                         }
                         .animation(.easeInOut(duration: 2.0), value: mealList != nil)
                     
